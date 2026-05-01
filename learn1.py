@@ -1,19 +1,26 @@
+n = int(input("How many subjects? "))
 marks = []
-for d in range (5):
-    if d == 1:
-        num = int (input ("Enter Bangla marks "))
-        marks.append(num)
-    elif d == 2:
-        num = int (input ("Enter english marks "))
-        marks.append(num)
-    elif d == 3:
-        num = int (input ("Enter Math marks "))
-        marks.append(num)
-    else:
-        num = int (input ("Enter marks "))
-        marks.append(num)
 
-print(marks)
+for i in range(n):
+    while True:
+        num = int(input(f"Enter mark {i+1}: "))
+        
+        if 0 <= num <= 100:
+            marks.append(num)
+            break
+        else:
+            print("Invalid input! Enter marks between 0 and 100.")
+            
+avg = sum(marks) / n
+print("Average:", avg)
 
-avg = sum(marks)/5
-print(avg)
+if avg >= 80:
+    print("Grade: A")
+elif avg >= 70:
+    print("Grade: B")
+elif avg >= 60:
+    print("Grade: C")
+elif avg >= 50:
+    print("Grade: D")
+else:
+    print("Grade: F")
