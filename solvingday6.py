@@ -77,10 +77,7 @@ for i in range(n):
     numbers.append(num)
 
 newlist = []
-
 newlist.append(numbers[-1])
-
-print(newlist)
 
 for i in range(len(numbers)-1):
     newlist.append(numbers[i])
